@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dance2Hesitate: A Multi-Modal Dataset of Dancer-Taught Hesitancy for Understandable Robot Motion. Accepted at HRI 2026 D-TUR.">
+    <title>Dance2Hesitate | HRI 2026 Dataset</title>
+    
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Background Elements for Aesthetics -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">Dance2Hesitate</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#dataset">Dataset</a></li>
+                <li><a href="#showcase">Showcase</a></li>
+                <li><a href="#guide">Usage Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-badge">Accepted to D-TUR Workshop · HRI 2026</div>
+            <h1 class="hero-title">Dance2Hesitate</h1>
+            <h2 class="hero-subtitle">A Multi-Modal Dataset of Dancer-Taught Hesitancy for Understandable Robot Motion</h2>
+            <p class="hero-authors">By double-blind authors (Dataset URL conditionally omitted)</p>
+            
+            <div class="hero-actions">
+                <a href="#dataset" class="btn btn-primary">
+                    <span>Explore Dataset</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#showcase" class="btn btn-secondary">Watch Behaviors</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="section about" id="about">
+        <div class="container">
+            <h3 class="section-title">Abstract</h3>
+            <div class="abstract-content">
+                <p>
+                    In human-robot collaboration, robots expressing hesitancy is a critical factor that shapes human coordination strategies, attention allocation, and safety-related judgments. However, designing hesitant robot motion that generalizes is challenging because the observer's inference is highly dependent on embodiment and context. 
+                </p>
+                <p>
+                    To address these challenges, we introduce and open-source a multi-modal, dancer-generated dataset of hesitant motion where we focus on specific context-embodiment pairs (i.e., manipulator/ human upperlimb approaching a Jenga Tower, and anthropomorphic whole body motion in free space). 
+                </p>
+                <p>
+                    The dataset includes <strong>(i) kinesthetic teaching demonstrations</strong> on a Franka Emika Panda reaching from a fixed start configuration to a fixed target with three graded hesitancy levels (slight, significant, extreme) and <strong>(ii) synchronized RGB-D motion capture</strong> of dancers performing the same reaching behavior using their upper limb across three hesitancy levels, plus full human body sequences for extreme hesitancy.
+                </p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">70</div>
+                    <div class="stat-label">Whole-body Trajectories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">84</div>
+                    <div class="stat-label">Upper Limb Trajectories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">66</div>
+                    <div class="stat-label">Kinesthetic Trajectories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Hesitancy Levels</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Video Showcase Section -->
+    <section class="section showcase" id="showcase">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-title">Video Showcase</h3>
+                <p class="section-desc">Observe the nuance of hesitancy encoded in spatiotemporal kinematics.</p>
+            </div>
+
+            <div class="showcase-container">
+                <div class="video-player-wrapper">
+                    <!-- Placeholder for video, will be driven by JS -->
+                    <div class="video-placeholder flex-center" id="main-video-player">
+                        <span class="placeholder-text">Select a video below to play</span>
+                    </div>
+                    <div class="video-info" id="video-info">
+                        <h4 class="video-title">Select a behavior</h4>
+                        <p class="video-desc">Details will appear here</p>
+                    </div>
+                </div>
+
+                <div class="video-thumbnails" id="video-grid">
+                    <!-- Thumbnail JS injections will go here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dataset Guide (Documentation Style) -->
+    <section class="section guide" id="guide">
+        <div class="container">
+            <h3 class="section-title">Dataset Usage Guide</h3>
+            <p class="section-desc">Formats, topics, and structures mapped out for researchers.</p>
+            
+            <div class="docs-layout">
+                <div class="docs-sidebar">
+                    <ul class="docs-nav" id="docs-nav">
+                        <li class="active" data-target="guide-robot">Robot Kinesthetic (Franka)</li>
+                        <li data-target="guide-rgbd">Human RGB-D (RealSense)</li>
+                        <li data-target="guide-load">Quickstart (Python)</li>
+                    </ul>
+                </div>
+                
+                <div class="docs-content">
+                    <div class="doc-pane active" id="guide-robot">
+                        <h4>Robot Kinesthetic Demonstrations</h4>
+                        <p>We provide full state logs directly from the <code>franka_states</code> ROS topic alongside convenient formats for downstream learning.</p>
+                        <div class="code-block">
+                            <div class="code-header">Directory Structure</div>
+                            <pre><code>dataset/
+├── robot/
+│   ├── slight/
+│   │   ├── traj_01_q.csv      # Robot Joint angles q(t)
+│   │   ├── traj_01_dq.csv     # Velocities
+│   │   ├── traj_01_tau.csv    # Efforts/Torques
+│   │   ├── traj_01_ee_p.csv   # EE Position
+│   │   └── traj_01_ee_r.csv   # EE Rotation
+│   ├── significant/
+│   └── extreme/
+└── all_trajs_q.npz            # Batched NPZ for quick loading
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="doc-pane" id="guide-rgbd">
+                        <h4>Human RGB-D Reaching & Whole-body</h4>
+                        <p>Motion capture from 2x RealSense cameras and OpenPose, yielding timestamped 2D/3D keypoints and confidence scores.</p>
+                        <div class="code-block">
+                            <div class="code-header">Schema (keypoints_3d.csv)</div>
+                            <pre><code>frame, joint_index, X, Y, Z, confidence
+0,     0,           120.5, 45.2, 500.1, 0.95
+0,     1,           118.0, 60.1, 480.2, 0.88
+...</code></pre>
+                        </div>
+                        <div class="alert alert-info">
+                            <strong>Note:</strong> We apply a minimum confidence threshold <code>MIN_CONF = 0.30</code>. Lower confidence measurements are treated as missing data to prevent spurious joints.
+                        </div>
+                    </div>
+                    
+                    <div class="doc-pane" id="guide-load">
+                        <h4>Quickstart loading in Python</h4>
+                        <p>The dataset is curated for immediate use with standard python scientific tooling (NumPy, Pandas).</p>
+                        <div class="code-block">
+                            <div class="code-header">load_data.py</div>
+                            <pre><code class="language-python">import numpy as np
+import pandas as pd
+
+# Load batched robot joint angles
+robot_data = np.load('all_trajs_q.npz')
+q_slight = robot_data['slight'] # Array of shape (N_trajectories, Timesteps, 7)
+
+# Load human 3D keypoints
+human_kp = pd.read_csv('keypoints_3d.csv')
+high_conf_mask = human_kp['confidence'] >= 0.30
+valid_kps = human_kp[high_conf_mask]
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <p class="logo">Dance2Hesitate</p>
+                <p>Open-source dataset for understandable robot motion.</p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; 2026 The Authors. Accepted to D-TUR Workshop, HRI 2026.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core Logic -->
+    <script src="js/main.js"></script>
+</body>
+</html>
