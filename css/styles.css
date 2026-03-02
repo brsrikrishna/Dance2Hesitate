@@ -194,14 +194,27 @@ h5,
 
 .hero-badge {
     display: inline-block;
-    padding: 0.4rem 1rem;
+    padding: 0.6rem 1.2rem;
     background: rgba(47, 129, 247, 0.1);
     color: var(--primary-color);
     border: 1px solid rgba(47, 129, 247, 0.2);
     border-radius: 20px;
-    font-size: 0.85rem;
     font-weight: 500;
     margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.workshop-title {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.conference-title {
+    font-size: 1.05rem;
+    /* Larger font size as requested */
+    font-weight: 600;
+    display: block;
+    margin-top: 0.2rem;
 }
 
 .hero-title {
@@ -226,6 +239,8 @@ h5,
 .hero-authors {
     font-size: 1rem;
     color: rgba(139, 148, 158, 0.8);
+    margin-top: 2rem;
+    /* Added explicitly to force more space between subtitle and authors */
     margin-bottom: 4rem;
     /* Increased bottom margin here */
     line-height: 2;
