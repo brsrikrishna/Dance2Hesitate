@@ -14,21 +14,21 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 const categories = {
     kinesthetic: [
-        { id: 'robot-extreme', label: 'Extreme', src: 'assets/videos/extremely hesitant robot.mp4', type: 'video/mp4' },
-        { id: 'robot-significant', label: 'Significant', src: 'assets/videos/significantly hesitant robot.mp4', type: 'video/mp4' },
-        { id: 'robot-slight', label: 'Slight', src: 'assets/videos/slightly hesitant robot.mp4', type: 'video/mp4' }
+        { id: 'robot-extreme', label: 'Extreme', src: 'assets/videos/extremely_hesitant_robot.mp4', type: 'video/mp4' },
+        { id: 'robot-significant', label: 'Significant', src: 'assets/videos/significantly_hesitant_robot.mp4', type: 'video/mp4' },
+        { id: 'robot-slight', label: 'Slight', src: 'assets/videos/slightly_hesitant_robot.mp4', type: 'video/mp4' }
     ],
     upperLimb: [
-        { id: 'human-arm-extreme-front', label: 'Extreme (Front)', src: 'assets/videos/extremely_hesitant_limb_front.avi', type: 'video/mp4' },
-        { id: 'human-arm-extreme-side', label: 'Extreme (Side)', src: 'assets/videos/extremely_hesitant_limb_side.avi', type: 'video/mp4' },
-        { id: 'human-arm-significant-front', label: 'Significant (Front)', src: 'assets/videos/significant_hesitant_limb_front.avi', type: 'video/mp4' },
-        { id: 'human-arm-significant-side', label: 'Significant (Side)', src: 'assets/videos/significant_hesitant_limb_side.avi', type: 'video/mp4' },
-        { id: 'human-arm-slight-front', label: 'Slight (Front)', src: 'assets/videos/slightly_hesitant_limb_front.avi', type: 'video/mp4' },
-        { id: 'human-arm-slight-side', label: 'Slight (Side)', src: 'assets/videos/slightly_hesitant_limb_side.avi', type: 'video/mp4' }
+        { id: 'human-arm-extreme-front', label: 'Extreme (Front)', src: 'assets/videos/extremely_hesitant_limb_front.mp4', type: 'video/mp4' },
+        { id: 'human-arm-extreme-side', label: 'Extreme (Side)', src: 'assets/videos/extremely_hesitant_limb_side.mp4', type: 'video/mp4' },
+        { id: 'human-arm-significant-front', label: 'Significant (Front)', src: 'assets/videos/significant_hesitant_limb_front.mp4', type: 'video/mp4' },
+        { id: 'human-arm-significant-side', label: 'Significant (Side)', src: 'assets/videos/significant_hesitant_limb_side.mp4', type: 'video/mp4' },
+        { id: 'human-arm-slight-front', label: 'Slight (Front)', src: 'assets/videos/slightly_hesitant_limb_front.mp4', type: 'video/mp4' },
+        { id: 'human-arm-slight-side', label: 'Slight (Side)', src: 'assets/videos/slightly_hesitant_limb_side.mp4', type: 'video/mp4' }
     ],
     wholeBody: [
-        { id: 'human-whole-front', label: 'Extreme (Front)', src: 'assets/videos/whole_body_front.avi', type: 'video/mp4' },
-        { id: 'human-whole-side', label: 'Extreme (Side)', src: 'assets/videos/whole_body_side.avi', type: 'video/mp4' }
+        { id: 'human-whole-front', label: 'Extreme (Front)', src: 'assets/videos/whole_body_front.mp4', type: 'video/mp4' },
+        { id: 'human-whole-side', label: 'Extreme (Side)', src: 'assets/videos/whole_body_side.mp4', type: 'video/mp4' }
     ]
 };
 
@@ -41,7 +41,7 @@ function initVideoShowcase() {
 function setupColumn(colId, videos) {
     const container = document.getElementById(`video-${colId}`);
     const controls = document.getElementById(`btn-${colId}`);
-    
+
     if (!container || !controls) return;
 
     videos.forEach((vid, index) => {
@@ -49,13 +49,13 @@ function setupColumn(colId, videos) {
         btn.className = 'video-btn';
         if (index === 0) btn.classList.add('active');
         btn.textContent = vid.label;
-        
+
         btn.onclick = () => {
             Array.from(controls.children).forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             renderVideo(container, vid);
         };
-        
+
         controls.appendChild(btn);
     });
 
