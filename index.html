@@ -38,35 +38,31 @@
 
     <header class="hero" id="home">
         <div class="container hero-content">
+            <h1 class="hero-title">Dance2Hesitate</h1>
+            <h2 class="hero-subtitle">A Multi-Modal Dataset of Dancer-Taught Hesitancy for Understandable Robot Motion
+            </h2>
+            <p class="hero-authors">
+                <strong>Srikrishna Bangalore Raghu</strong>, <strong>Anna Soukhovei</strong>, <strong>Divya Sai
+                    Sindhuja
+                    Vankineni</strong>, <strong>Alexandra Bacula†</strong>, <strong>Alessandro Roncone</strong><br>
+                <span class="affiliations">University of Colorado Boulder | †Pacific Lutheran University</span><br>
+            </p>
             <div class="hero-badge">
                 <span class="workshop-title">Accepted to the Designing Transparent and Understandable Robots (D-TUR)
                     Workshop</span><br>
                 <span class="conference-title">ACM/IEEE International Conference on Human-Robot Interaction (HRI) 2026,
                     Edinburgh, UK</span>
             </div>
-            <h1 class="hero-title">Dance2Hesitate</h1>
-            <h2 class="hero-subtitle">A Multi-Modal Dataset of Dancer-Taught Hesitancy for Understandable Robot Motion
-                <p class="hero-authors">
-                    <strong>Srikrishna Bangalore Raghu</strong>, <strong>Anna Soukhovei</strong>, <strong>Divya Sai
-                        Sindhuja
-                        Vankineni</strong>, <strong>Alexandra Bacula†</strong>, <strong>Alessandro Roncone</strong><br>
-                    <span class="affiliations">University of Colorado Boulder | †Pacific Lutheran University</span><br>
-                    <span class="contact-emails">
-                        {srikrishna.bangaloreraghu, anna.soukhovei, divya.vankineni, alessandro.roncone}@colorado.edu |
-                        alexandra.bacula@plu.edu
-                    </span>
-                </p>
 
-                <div class="hero-actions">
-                    <a href="#dataset" class="btn btn-primary">
-                        <span>Explore Dataset</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                    <a href="#showcase" class="btn btn-secondary">Watch Behaviors</a>
-                </div>
+            <div class="hero-actions">
+                <a href="#dataset" class="btn btn-primary">
+                    <span>Explore Dataset</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="#showcase" class="btn btn-secondary">Watch Behaviors</a>
+            </div>
         </div>
     </header>
 
@@ -122,20 +118,21 @@
                 <p class="section-desc">Observe the nuance of hesitancy encoded in spatiotemporal kinematics.</p>
             </div>
 
-            <div class="showcase-container">
-                <div class="video-player-wrapper">
-                    <!-- Placeholder for video, will be driven by JS -->
-                    <div class="video-placeholder flex-center" id="main-video-player">
-                        <span class="placeholder-text">Select a video below to play</span>
-                    </div>
-                    <div class="video-info" id="video-info">
-                        <h4 class="video-title">Select a behavior</h4>
-                        <p class="video-desc">Details will appear here</p>
-                    </div>
+            <div class="showcase-columns" id="showcase-columns">
+                <div class="showcase-col" id="col-kinesthetic">
+                    <h4>Kinesthetic</h4>
+                    <div class="video-container" id="video-kinesthetic"></div>
+                    <div class="video-controls" id="btn-kinesthetic"></div>
                 </div>
-
-                <div class="video-thumbnails" id="video-grid">
-                    <!-- Thumbnail JS injections will go here -->
+                <div class="showcase-col" id="col-upper">
+                    <h4>Upper Limb</h4>
+                    <div class="video-container" id="video-upper"></div>
+                    <div class="video-controls" id="btn-upper"></div>
+                </div>
+                <div class="showcase-col" id="col-body">
+                    <h4>Whole Body</h4>
+                    <div class="video-container" id="video-body"></div>
+                    <div class="video-controls" id="btn-body"></div>
                 </div>
             </div>
         </div>
