@@ -13,36 +13,122 @@ document.addEventListener('DOMContentLoaded', () => {
  * expected paths in `assets/videos/`. These can be easily replaced by the author.
  */
 const videoData = [
+    // ------------------------------------
+    // Franka Panda Kinesthetic
+    // ------------------------------------
     {
         id: 'robot-extreme',
         title: 'Franka Panda (Extreme Hesitancy)',
         badge: 'Kinesthetic',
         description: 'The manipulator reaches the Jenga tower while exhibiting significant start-stop motions and retractions, characteristic of extreme uncertainty.',
-        src: 'assets/videos/robot_extreme.mp4',
-        thumb: '#21262d' // Placeholder color, typically an image path natively: 'assets/images/thumb1.jpg'
+        src: 'assets/videos/extremely hesitant robot.mp4',
+        type: 'video/mp4',
+        thumb: '#21262d'
+    },
+    {
+        id: 'robot-significant',
+        title: 'Franka Panda (Significant Hesitancy)',
+        badge: 'Kinesthetic',
+        description: 'A noticeably slower approach with prominent pauses and decelerations before proceeding to the target.',
+        src: 'assets/videos/significantly hesitant robot.mp4',
+        type: 'video/mp4',
+        thumb: '#2c333b'
     },
     {
         id: 'robot-slight',
         title: 'Franka Panda (Slight Hesitancy)',
         badge: 'Kinesthetic',
         description: 'A smooth approach with only a minor deceleration or micro-pause before proceeding to the target.',
-        src: 'assets/videos/robot_slight.mp4',
+        src: 'assets/videos/slightly hesitant robot.mp4',
+        type: 'video/mp4',
         thumb: '#30363d'
     },
+
+    // ------------------------------------
+    // Full Body Dancer
+    // ------------------------------------
     {
-        id: 'human-extreme',
-        title: 'Full Body Dancer (Extreme Hesitancy)',
+        id: 'human-whole-front',
+        title: 'Full Body Dancer (Extreme Hesitancy) - Front',
         badge: 'RGB-D Keypoints',
-        description: 'Dancer expresses profound uncertainty using stepping behaviors, torso retraction, and hesitant arm extension.',
-        src: 'assets/videos/human_extreme.mp4',
+        description: 'Dancer expresses profound uncertainty using stepping behaviors, torso retraction, and hesitant arm extension (Front View).',
+        src: 'assets/videos/whole_body_front.avi',
+        type: 'video/mp4', // Modern browsers try to handle AVI via HTML5 video, though fallback might be needed
         thumb: '#161b22'
     },
     {
-        id: 'human-arm-significant',
-        title: 'Upper Limb Dancer (Significant Hesitancy)',
+        id: 'human-whole-side',
+        title: 'Full Body Dancer (Extreme Hesitancy) - Side',
+        badge: 'RGB-D Keypoints',
+        description: 'Dancer expresses profound uncertainty using stepping behaviors, torso retraction, and hesitant arm extension (Side View).',
+        src: 'assets/videos/whole_body_side.avi',
+        type: 'video/mp4',
+        thumb: '#161b22'
+    },
+
+    // ------------------------------------
+    // Upper Limb Dancer - Extreme
+    // ------------------------------------
+    {
+        id: 'human-arm-extreme-front',
+        title: 'Upper Limb Dancer (Extreme Hesitancy) - Front',
+        badge: 'RGB-D Keypoints',
+        description: 'Dancer demonstrates severe jerky motions, sudden stops, and multi-step retractions while extending the arm.',
+        src: 'assets/videos/extremely_hesitant_limb_front.avi',
+        type: 'video/mp4',
+        thumb: '#0d1117'
+    },
+    {
+        id: 'human-arm-extreme-side',
+        title: 'Upper Limb Dancer (Extreme Hesitancy) - Side',
+        badge: 'RGB-D Keypoints',
+        description: 'Dancer demonstrates severe jerky motions, sudden stops, and multi-step retractions while extending the arm.',
+        src: 'assets/videos/extremely_hesitant_limb_side.avi',
+        type: 'video/mp4',
+        thumb: '#0d1117'
+    },
+
+    // ------------------------------------
+    // Upper Limb Dancer - Significant
+    // ------------------------------------
+    {
+        id: 'human-arm-significant-front',
+        title: 'Upper Limb Dancer (Significant Hesitancy) - Front',
         badge: 'RGB-D Keypoints',
         description: 'Dancer demonstrates moderate pausing and slower velocity profiles when extending the arm.',
-        src: 'assets/videos/human_arm_significant.mp4',
+        src: 'assets/videos/significant_hesitant_limb_front.avi',
+        type: 'video/mp4',
+        thumb: '#0d1117'
+    },
+    {
+        id: 'human-arm-significant-side',
+        title: 'Upper Limb Dancer (Significant Hesitancy) - Side',
+        badge: 'RGB-D Keypoints',
+        description: 'Dancer demonstrates moderate pausing and slower velocity profiles when extending the arm.',
+        src: 'assets/videos/significant_hesitant_limb_side.avi',
+        type: 'video/mp4',
+        thumb: '#0d1117'
+    },
+
+    // ------------------------------------
+    // Upper Limb Dancer - Slight
+    // ------------------------------------
+    {
+        id: 'human-arm-slight-front',
+        title: 'Upper Limb Dancer (Slight Hesitancy) - Front',
+        badge: 'RGB-D Keypoints',
+        description: 'Dancer extends arm smoothly with only a very brief reduction in speed midway.',
+        src: 'assets/videos/slightly_hesitant_limb_front.avi',
+        type: 'video/mp4',
+        thumb: '#0d1117'
+    },
+    {
+        id: 'human-arm-slight-side',
+        title: 'Upper Limb Dancer (Slight Hesitancy) - Side',
+        badge: 'RGB-D Keypoints',
+        description: 'Dancer extends arm smoothly with only a very brief reduction in speed midway.',
+        src: 'assets/videos/slightly_hesitant_limb_side.avi',
+        type: 'video/mp4',
         thumb: '#0d1117'
     }
 ];
@@ -93,10 +179,10 @@ function loadVideo(video, playerWrapper, infoEl) {
     // it to be visually robust even without the source immediately present.
     playerWrapper.innerHTML = `
         <video class="actual-video" controls autoplay muted playsinline loop>
-            <source src="${video.src}" type="video/mp4">
+            <source src="${video.src}" type="${video.type}">
             <!-- Fallback text -->
             <div class="video-placeholder flex-center" style="height: 100%;">
-                <span class="placeholder-text">Video source: ${video.src} (Missing locally)</span>
+                <span class="placeholder-text">Video format unsupported natively. <a href="${video.src}" download style="color:var(--primary-color)">Download video</a></span>
             </div>
         </video>
     `;
