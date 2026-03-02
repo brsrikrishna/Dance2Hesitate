@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dance2Hesitate: A Multi-Modal Dataset of Dancer-Taught Hesitancy for Understandable Robot Motion. Accepted at HRI 2026 D-TUR.">
+    <meta name="description"
+        content="Dance2Hesitate: A Multi-Modal Dataset of Dancer-Taught Hesitancy for Understandable Robot Motion. Accepted at Designing Transparent and Understandable Robots (D-TUR) Workshop, ACM/IEEE International Conference on Human-Robot Interaction (HRI) 2026, Edinburgh, UK.">
     <title>Dance2Hesitate | HRI 2026 Dataset</title>
-    
+
     <!-- Google Fonts for modern typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
     <!-- Core Styles -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <!-- Background Elements for Aesthetics -->
     <div class="bg-glow bg-glow-1"></div>
@@ -33,15 +38,27 @@
 
     <header class="hero" id="home">
         <div class="container hero-content">
-            <div class="hero-badge">Accepted to D-TUR Workshop · HRI 2026</div>
+            <div class="hero-badge">Accepted to Designing Transparent and Understandable Robots (D-TUR) Workshop ·
+                ACM/IEEE International Conference on Human-Robot Interaction (HRI) 2026, Edinburgh, UK</div>
             <h1 class="hero-title">Dance2Hesitate</h1>
-            <h2 class="hero-subtitle">A Multi-Modal Dataset of Dancer-Taught Hesitancy for Understandable Robot Motion</h2>
-            <p class="hero-authors">By double-blind authors (Dataset URL conditionally omitted)</p>
-            
+            <h2 class="hero-subtitle">A Multi-Modal Dataset of Dancer-Taught Hesitancy for Understandable Robot Motion
+            </h2>
+            <p class="hero-authors">
+                <strong>Srikrishna Bangalore Raghu</strong>, <strong>Anna Soukhovei</strong>, <strong>Divya Sai Sindhuja
+                    Vankineni</strong>, <strong>Alexandra Bacula*</strong>, <strong>Alessandro Roncone</strong><br>
+                <span class="affiliations">University of Colorado Boulder | *Pacific Lutheran University</span><br>
+                <span class="contact-emails">
+                    {srikrishna.bangaloreraghu, anna.soukhovei, divya.vankineni, alessandro.roncone}@colorado.edu |
+                    alexandra.bacula@plu.edu
+                </span>
+            </p>
+
             <div class="hero-actions">
                 <a href="#dataset" class="btn btn-primary">
                     <span>Explore Dataset</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
                 </a>
                 <a href="#showcase" class="btn btn-secondary">Watch Behaviors</a>
             </div>
@@ -53,28 +70,40 @@
             <h3 class="section-title">Abstract</h3>
             <div class="abstract-content">
                 <p>
-                    In human-robot collaboration, robots expressing hesitancy is a critical factor that shapes human coordination strategies, attention allocation, and safety-related judgments. However, designing hesitant robot motion that generalizes is challenging because the observer's inference is highly dependent on embodiment and context. 
+                    In human-robot collaboration, robots expressing hesitancy is a critical factor that shapes human
+                    coordination strategies, attention allocation, and safety-related judgments. However, designing
+                    hesitant robot motion that generalizes is challenging because the observer's inference is highly
+                    dependent on embodiment and context.
                 </p>
                 <p>
-                    To address these challenges, we introduce and open-source a multi-modal, dancer-generated dataset of hesitant motion where we focus on specific context-embodiment pairs (i.e., manipulator/ human upperlimb approaching a Jenga Tower, and anthropomorphic whole body motion in free space). 
+                    To address these challenges, we introduce and open-source a multi-modal, dancer-generated dataset of
+                    hesitant motion where we focus on specific context-embodiment pairs (i.e., manipulator/ human
+                    upperlimb approaching a Jenga Tower, and anthropomorphic whole body motion in free space).
                 </p>
                 <p>
-                    The dataset includes <strong>(i) kinesthetic teaching demonstrations</strong> on a Franka Emika Panda reaching from a fixed start configuration to a fixed target with three graded hesitancy levels (slight, significant, extreme) and <strong>(ii) synchronized RGB-D motion capture</strong> of dancers performing the same reaching behavior using their upper limb across three hesitancy levels, plus full human body sequences for extreme hesitancy.
+                    The dataset includes <strong>(i) kinesthetic teaching demonstrations</strong> on a Franka Emika
+                    Panda reaching from a fixed start configuration to a fixed target with three graded hesitancy levels
+                    (slight, significant, extreme) and <strong>(ii) synchronized RGB-D motion capture</strong> of
+                    dancers performing the same reaching behavior using their upper limb across three hesitancy levels,
+                    plus full human body sequences for extreme hesitancy.
                 </p>
             </div>
-            
+
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number">70</div>
-                    <div class="stat-label">Whole-body Trajectories</div>
+                    <div class="stat-label">Whole-body Trajectories<br><span style="font-size: 0.85em; opacity: 0.8;">(1
+                            Hesitancy Level)</span></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">84</div>
-                    <div class="stat-label">Upper Limb Trajectories</div>
+                    <div class="stat-label">Upper Limb Trajectories<br><span style="font-size: 0.85em; opacity: 0.8;">(3
+                            Hesitancy Levels)</span></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">66</div>
-                    <div class="stat-label">Kinesthetic Trajectories</div>
+                    <div class="stat-label">Kinesthetic Trajectories<br><span
+                            style="font-size: 0.85em; opacity: 0.8;">(3 Hesitancy Levels)</span></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">3</div>
@@ -116,7 +145,7 @@
         <div class="container">
             <h3 class="section-title">Dataset Usage Guide</h3>
             <p class="section-desc">Formats, topics, and structures mapped out for researchers.</p>
-            
+
             <div class="docs-layout">
                 <div class="docs-sidebar">
                     <ul class="docs-nav" id="docs-nav">
@@ -125,11 +154,12 @@
                         <li data-target="guide-load">Quickstart (Python)</li>
                     </ul>
                 </div>
-                
+
                 <div class="docs-content">
                     <div class="doc-pane active" id="guide-robot">
                         <h4>Robot Kinesthetic Demonstrations</h4>
-                        <p>We provide full state logs directly from the <code>franka_states</code> ROS topic alongside convenient formats for downstream learning.</p>
+                        <p>We provide full state logs directly from the <code>franka_states</code> ROS topic alongside
+                            convenient formats for downstream learning.</p>
                         <div class="code-block">
                             <div class="code-header">Directory Structure</div>
                             <pre><code>dataset/
@@ -149,7 +179,8 @@
 
                     <div class="doc-pane" id="guide-rgbd">
                         <h4>Human RGB-D Reaching & Whole-body</h4>
-                        <p>Motion capture from 2x RealSense cameras and OpenPose, yielding timestamped 2D/3D keypoints and confidence scores.</p>
+                        <p>Motion capture from 2x RealSense cameras and OpenPose, yielding timestamped 2D/3D keypoints
+                            and confidence scores.</p>
                         <div class="code-block">
                             <div class="code-header">Schema (keypoints_3d.csv)</div>
                             <pre><code>frame, joint_index, X, Y, Z, confidence
@@ -158,13 +189,15 @@
 ...</code></pre>
                         </div>
                         <div class="alert alert-info">
-                            <strong>Note:</strong> We apply a minimum confidence threshold <code>MIN_CONF = 0.30</code>. Lower confidence measurements are treated as missing data to prevent spurious joints.
+                            <strong>Note:</strong> We apply a minimum confidence threshold <code>MIN_CONF = 0.30</code>.
+                            Lower confidence measurements are treated as missing data to prevent spurious joints.
                         </div>
                     </div>
-                    
+
                     <div class="doc-pane" id="guide-load">
                         <h4>Quickstart loading in Python</h4>
-                        <p>The dataset is curated for immediate use with standard python scientific tooling (NumPy, Pandas).</p>
+                        <p>The dataset is curated for immediate use with standard python scientific tooling (NumPy,
+                            Pandas).</p>
                         <div class="code-block">
                             <div class="code-header">load_data.py</div>
                             <pre><code class="language-python">import numpy as np
@@ -193,7 +226,8 @@ valid_kps = human_kp[high_conf_mask]
                 <p>Open-source dataset for understandable robot motion.</p>
             </div>
             <div class="footer-right">
-                <p>&copy; 2026 The Authors. Accepted to D-TUR Workshop, HRI 2026.</p>
+                <p>&copy; 2026 The Authors. Accepted to D-TUR Workshop, ACM/IEEE International Conference on Human-Robot
+                    Interaction (HRI) 2026, Edinburgh, UK.</p>
             </div>
         </div>
     </footer>
@@ -201,4 +235,5 @@ valid_kps = human_kp[high_conf_mask]
     <!-- Core Logic -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
