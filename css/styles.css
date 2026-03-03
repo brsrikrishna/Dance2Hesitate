@@ -233,11 +233,11 @@ h5,
 }
 
 .left-logo {
-    justify-self: end;
+    justify-self: start;
 }
 
 .right-logo {
-    justify-self: start;
+    justify-self: end;
 }
 
 .hero-title {
