@@ -301,6 +301,10 @@ h5,
     margin-bottom: 1rem;
 }
 
+.about .section-title {
+    text-align: center;
+}
+
 .section-desc {
     color: var(--text-muted);
     font-size: 1.1rem;
