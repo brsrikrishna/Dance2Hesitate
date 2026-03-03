@@ -233,14 +233,7 @@ h5,
     /* Slight rounding for jpg, doesn't hurt svg */
 }
 
-/* Specific styling if one logo needs to be tweaked individually */
-.left-logo {
-    /* Optional: e.g. padding, background if needed */
-}
 
-.right-logo {
-    /* Optional */
-}
 
 .hero-title {
     font-size: 4.5rem;
