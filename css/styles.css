@@ -218,22 +218,27 @@ h5,
 }
 
 .hero-title-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: center;
     gap: 2rem;
     margin-bottom: 1rem;
+    width: 100%;
 }
 
 .hero-logo-img {
     height: 80px;
-    /* Adjust height based on preference, approx same height as title */
     object-fit: contain;
     border-radius: 8px;
-    /* Slight rounding for jpg, doesn't hurt svg */
 }
 
+.left-logo {
+    justify-self: end;
+}
 
+.right-logo {
+    justify-self: start;
+}
 
 .hero-title {
     font-size: 4.5rem;
@@ -571,12 +576,19 @@ footer {
 
 @media (max-width: 600px) {
     .hero-title-wrapper {
+        display: flex;
+        /* revert to flex for vertical stacking */
         flex-direction: column;
         gap: 1rem;
     }
 
     .hero-logo-img {
         height: 60px;
+    }
+
+    .left-logo,
+    .right-logo {
+        justify-self: auto;
     }
 
     .hero-title {
