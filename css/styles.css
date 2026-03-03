@@ -217,11 +217,37 @@ h5,
     margin-top: 0.2rem;
 }
 
+.hero-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero-logo-img {
+    height: 80px;
+    /* Adjust height based on preference, approx same height as title */
+    object-fit: contain;
+    border-radius: 8px;
+    /* Slight rounding for jpg, doesn't hurt svg */
+}
+
+/* Specific styling if one logo needs to be tweaked individually */
+.left-logo {
+    /* Optional: e.g. padding, background if needed */
+}
+
+.right-logo {
+    /* Optional */
+}
+
 .hero-title {
     font-size: 4.5rem;
     font-weight: 800;
     letter-spacing: -0.03em;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    /* Remove bottom margin since wrapper handles it */
     background: linear-gradient(135deg, #fff 0%, #8b949e 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -551,6 +577,15 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .hero-title-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-logo-img {
+        height: 60px;
+    }
+
     .hero-title {
         font-size: 3rem;
     }
